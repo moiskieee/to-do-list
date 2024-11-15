@@ -1,5 +1,5 @@
 class TodoListManager:
-	def __init__(self):
+    def __init__(self):
         self.tasks = []
 
     def add_task(self):
@@ -14,7 +14,7 @@ class TodoListManager:
             status = "✓" if task["completed"] else "✗"
             print(f"{i}. {task['name']} [{status}]")
 
-     def run(self):
+    def run(self):
         while True:
             print("\nTo-Do List Manager")
             print("1. Add Task")
@@ -44,7 +44,6 @@ class TodoListManager:
             else:
                 print("Invalid choice. Please try again.")
 
-
     def mark_task_complete(self):
         self.view_tasks()
         task_num = int(input("Enter the task number to mark as complete: "))
@@ -62,7 +61,7 @@ class TodoListManager:
             print(f"Deleted task: {deleted_task['name']}")
         else:
             print("Invalid task number.")
-	def filter_tasks(self):
+    def filter_tasks(self):
         status = input("Filter by (completed/incomplete): ").strip().lower()
         if status not in ["completed", "incomplete"]:
             print("Invalid filter. Please choose 'completed' or 'incomplete'.")
@@ -90,6 +89,7 @@ class TodoListManager:
         else:
             print("Invalid task number.")
 
-if _name_ == "_main_":
+
+if __name__ == "__main__":
     todo_manager = TodoListManager()
     todo_manager.run()
